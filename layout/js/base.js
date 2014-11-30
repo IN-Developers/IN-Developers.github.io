@@ -1,4 +1,4 @@
-﻿
+﻿/*
 window.onscroll = function () {
     var header = document.getElementById('header');
     var headerS = document.defaultView.getComputedStyle(header, '');
@@ -29,4 +29,4 @@ function onScrollU() {
     } else {
         header.style.display = 'none';
     }
-}
+}*/
