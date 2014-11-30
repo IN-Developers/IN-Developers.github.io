@@ -3,17 +3,18 @@
 body {
     background-color: #f8f8f8;
 }
-/*
+
 div#header {
     width:100%;
-    height:30px;
-    top:0;
-    left:0;
-    position:fixed;
-    display:none;
-    background-color:#c09795
+    top: -40px;
+    left: 0;
+    position: fixed;
+    background-color: #ffffff;
+    border-bottom: solid 2px #666666;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 4px 0;
+    text-align: center;
 }
-*/
+
 div#main {
     width:80%;
     margin: 0 auto;
@@ -29,64 +30,18 @@ div#main {
         padding-top: 17px;
         color: #666666;
     }
+    div#main a {
+        color: #616161;
+    }
     div#main hr {
         height: 1px;
         border: 0px none;
         background-color: rgba(0, 0, 0, 0.08);
     }
-    /*
-div#arTitle {
-    width:400px;
-    right:5px;
-    top:0;
-    padding:0 20px;
-    border:1px solid #f0f0f0;
-    border-style:solid none;
-    position:absolute;
-    color:#f0f0f0;
-    text-align:right;
-    font:200 50px Arial
-}
-div#main {
-    height:3000px;
-    position:relative;
-    margin:200px 5px 5px;
-    padding:5px 5px 70px 10px;
-    background-color:#ffffff;
-    border:1px solid gray
-}
-div#right {
-    right:0;
-    top:30px;
-    width:45px;
-    height:100%;
-    position:fixed;
-    
-    background-color:#c09795
-}
-    div#right div#buttons {
-        margin:70px 0 0 3px
-    }
-        div#right div#buttons div {
-        height:30px;
-        margin:3px 0;
-        background-color:#56383a;
-        font:200 20px Arial
-        }
-            div#right div#buttons div a {
-                width:34px;
-                height:22px;
-                position:absolute;
-                padding:4px;
-                display:block;
-                color:#fff;
-                text-decoration:none
-            }
-*/
+
 diiv#footer {
-    width: 100%;
     position: relative;
     color: #333;
     text-align: center;
-    font-family: "times new roman", serif;
+    font-family: Arial, serif;
 }
