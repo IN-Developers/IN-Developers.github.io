@@ -14,17 +14,22 @@ div#header {
 */
 div#main {
     width:80%;
-    margin: auto;
+    margin: 0 auto;
     padding: 45px 20px;
     position: relative;
     background-color: #ffffff;
     color: #616161;
     line-height: 1.5;
     text-align: center;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif, Arial;
 }
     div#main h3 {
         color:#666666;
+    }
+    div#main hr {
+        height: 1px;
+        border: 0px none;
+        background-color: rgba(0, 0, 0, 0.08);
     }
     /*
 div#arTitle {
