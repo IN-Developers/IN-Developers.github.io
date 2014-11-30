@@ -12,7 +12,7 @@ div#header {
     position: fixed;
     z-index: 999;
     background-color: #ffffff;
-    border-bottom: solid 2px #666666;
+    border-bottom: solid 1px #666666;
     box-shadow: rgba(0, 0, 0, 0.2) 0 4px 4px 0;
     color: #616161;
     text-align: center;
