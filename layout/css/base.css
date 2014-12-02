@@ -1,7 +1,9 @@
 ﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
-body {
-    background-color: #f8f8f8;
+html, body {
+    background-color: #ffffff;
+    color: #616161;
+    font-family: "Open Sans", sans-serif, Arial;
 }
 
 div#header {
@@ -17,36 +19,73 @@ div#header {
     color: #616161;
     text-align: center;
     font-size: 1.5em;
-    font-family: "Open Sans", sans-serif, Arial;
 }
 
-div#main {
-    width:80%;
-    margin: 0 auto;
-    padding: 45px 20px;
+div#wrapper {
+    width: 1000px;
+    height: 80%;
+    margin: auto;
+    padding: 45px 0;
     position: relative;
     background-color: #ffffff;
-    color: #616161;
     line-height: 1.5;
     text-align: center;
-    font-family: "Open Sans", sans-serif, Arial;
 }
-    div#main h3 {
+
+    div#wrapper h3 {
         padding-top: 17px;
         color: #666666;
     }
-    div#main a {
+
+    div#wrapper a {
         color: #616161;
     }
-    div#main hr {
+
+    div#wrapper hr {
         height: 1px;
         border: 0px none;
         background-color: rgba(0, 0, 0, 0.08);
     }
 
+div#menu {
+    position: fixed;
+    float: left;
+}
+    div#menu a {
+        width: 250px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 20px 0 20px 50px;
+        display: block;
+        color: #616161;
+        text-align: left;
+        font-size: 1.2em;
+        text-decoration: none;
+    }
+        div#menu a#top {
+            margin: 0;
+            padding: 10px 0 10px 20px;
+            border: none;
+            font-size: 1.7em;
+        }
+
+div#main {
+    width: 650px;
+    padding: 10px 0 50px;
+    position: relative;
+    float: right;
+}
+
 div#footer {
-    padding: 20px 0 10px;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0 20px;
+    position: fixed;
     color: #333;
     text-align: center;
-    font-family: Arial, serif;
+}
+
+@media (max-width: 999px), (max-height: 499px) {
+    div#menu {
+        position: relative;
+    }
 }
