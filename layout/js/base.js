@@ -14,6 +14,7 @@ $(function () {
 
     // GET HTML - Ajax
     $(document).on("click", "a[href ^= './'], a[href ^= 'http://github.dev003.net/']", function () {
+        $("#main").animate({ opacity: 0 }, 300);
         $.ajax({
             dataType: "html", url: $(this).attr("href"), success: function (data) {
                 if ($("#main", data).length < 1) {
@@ -21,21 +22,14 @@ $(function () {
                     return false;
                 }
                 $("#main").html($("#main", data).html());
-            }, error: function () { $("#main").html("<p>Error</p>"); }
+            }, error: function () { $("#main").html("<p>Error</p>"); },
+            complete: function () { $("#main").animate({ opacity: 1 }, 300) }
         });
         history.pushState(null, "", $(this).attr("href"));
         return false;
     });
-
-    $(document).scroll(function () {
-        return false;
-        if ($(document).scrollTop() > 150 && parseInt($("#header").css("top")) < 0) {
-            $("#header").stop();
-            $("#header").animate({ top: 0 }, 700);
-        } else if ($(document).scrollTop() < 150 && parseInt($("#header").css("top")) > -50) {
-            $("#header").stop();
-            $("#header").animate({ top: -50 }, 700);
-        }
+    $(document).on("popstate", function () {
+        location.replace(location.href);
     });
 
 })
