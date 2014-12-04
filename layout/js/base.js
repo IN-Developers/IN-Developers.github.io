@@ -17,22 +17,18 @@
     // GET HTML - Ajax
     $(document).on("click", "a[href ^= './'], a[href ^= '../'], a[href ^= 'http://github.dev003.net/']", function () {
         var href = $(this).attr("href");
-        var page = "No data";
         $("#main").css({ overflow: "hidden", "white-space": "nowrap" });
         $("#main").animate({ opacity: 0, width: 500 }, 200, "myslide", function () {
-            $("#main").html("<h3>Loading</h3>");
-            $("#main").css({ opacity: 1, width: 650 });
             $.ajax({
                 dataType: "html", url: href, success: function (data) {
                     if ($("#main", data).length < 1) {
-                        page = data.html();
+                        $("#main").html(data.html());
                         return false;
                     }
-                    page = $("#main", data).html();
-                }, error: function () { page = "<h3>Error</h3>"; },
+                    document.title = $("header title", data).html();
+                    $("#main").html($("#main", data).html());
+                }, error: function () { $("#main").html("<h3>Error</h3>"); },
                 complete: function () {
-                    $("#main").css({ opacity: 0, width: 500 });
-                    $("#main").html(page);
                     $("#main").animate({ opacity: 1, width: 650 }, 200, "myslide", function () { $("#main").css({ overflow: "", "white-space": "" }); });
                     history.pushState(null, "", $(this).attr("href"));
                 }
