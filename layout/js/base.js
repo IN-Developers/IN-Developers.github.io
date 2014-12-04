@@ -16,17 +16,24 @@
 
     // GET HTML - Ajax
     $(document).on("click", "a[href ^= './'], a[href ^= '../'], a[href ^= 'http://github.dev003.net/']", function () {
-        $("#main").animate({ opacity: 0, width: 500, overflow: "hidden", "white-space": "nowrap" }, 200, "myslide", function () {
+        var href = $(this).attr("href");
+        var page = "No data";
+        $("#main").css({ overflow: "hidden", "white-space": "nowrap" });
+        $("#main").animate({ opacity: 0, width: 500 }, 200, "myslide", function () {
+            $("#main").html("<h3>Loading</h3>");
+            $("#main").css({ opacity: 1, width: 650 });
             $.ajax({
-                dataType: "html", url: $(this).attr("href"), success: function (data) {
+                dataType: "html", url: href, success: function (data) {
                     if ($("#main", data).length < 1) {
-                        $("#main").html(data.html());
+                        page = data.html();
                         return false;
                     }
-                    $("#main").html($("#main", data).html());
-                }, error: function () { $("#main").html("<p>Error</p>"); },
+                    page = $("#main", data).html();
+                }, error: function () { page = "<h3>Error</h3>"; },
                 complete: function () {
-                    $("#main").animate({ opacity: 1, width: 650, overflow: "", "white-space": "" }, 200, "myslide");
+                    $("#main").css({ opacity: 0, width: 500 });
+                    $("#main").html(page);
+                    $("#main").animate({ opacity: 1, width: 650 }, 200, "myslide", function () { $("#main").css({ overflow: "", "white-space": "" }); });
                     history.pushState(null, "", $(this).attr("href"));
                 }
             });
