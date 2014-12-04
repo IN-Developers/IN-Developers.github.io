@@ -30,7 +30,7 @@
                 }, error: function () { $("#main").html("<h3>Error</h3>"); },
                 complete: function () {
                     $("#main").animate({ opacity: 1, width: 650 }, 200, "myslide", function () { $("#main").css({ overflow: "", "white-space": "" }); });
-                    history.pushState(null, "", $(this).attr("href"));
+                    history.pushState(null, "", href);
                 }
             });
         });
