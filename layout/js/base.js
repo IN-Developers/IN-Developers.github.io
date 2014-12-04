@@ -25,7 +25,7 @@
                         $("#main").html(data.html());
                         return false;
                     }
-                    document.title = $("head title", data).html();
+                    $("head title").html($("head title", data).html());
                     $("#main").html($("#main", data).html());
                 }, error: function () { $("#main").html("<h3>Error</h3>"); },
                 complete: function () {
