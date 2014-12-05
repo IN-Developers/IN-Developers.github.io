@@ -70,7 +70,7 @@ div#menu {
 
 div#main {
     width: 650px;
-    padding: 10px 0 50px;
+    padding: 10px 20px 50px 0;
     position: relative;
     float: right;
 }
@@ -84,7 +84,7 @@ div#footer {
     text-align: center;
 }
 
-@media (max-width: 999px), (max-height: 499px) {
+@media (max-device-width: 999px), (max-device-height: 499px) {
     div#menu {
         position: relative;
     }
